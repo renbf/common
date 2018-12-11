@@ -12,7 +12,7 @@
 
         <param-name>contextConfigLocation</param-name>
 
-        <param-value>classpath:applicationContext.xml</param-value>
+        <param-value>classpath:spring/applicationContext.xml</param-value>
 
     </context-param>
 
@@ -51,7 +51,7 @@
 
             <param-name>contextConfigLocation</param-name>
 
-            <param-value>classpath:spring-mvc.xml</param-value>
+            <param-value>classpath:spring/spring-mvc.xml</param-value>
 
         </init-param>
 

@@ -4,6 +4,8 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.text.DateFormat;
@@ -13,6 +15,8 @@ import java.util.Date;
 import java.util.List;
 
 public class CreateCode {
+	
+	private static final Logger logger = LoggerFactory.getLogger(CreateCode.class);
     // 定义一个开关flag=false，不覆盖
     private final static boolean flag = false;
     // 1.那些domain需要生成代码
@@ -104,7 +108,7 @@ public class CreateCode {
                 if (!parentFile.exists()) {
                     parentFile.mkdirs();
                 }
-                System.out.println(file.getAbsolutePath());
+                logger.info(file.getAbsolutePath());
                 // 获取模版
                 Template template = Velocity.getTemplate(SRC+WEBAPP+"template/" + templates[j], "UTF-8");
                 // 流
@@ -123,7 +127,7 @@ public class CreateCode {
         BufferedReader reader = null;
         try {
             List<BeanMapper> list = new ArrayList<>();
-            System.out.println("以行为单位读取文件内容，一次读一整行：");
+            logger.info("以行为单位读取文件内容，一次读一整行：");
             reader = new BufferedReader(new FileReader(file));
             String tempString = null;
             int line = 1;
@@ -151,7 +155,7 @@ public class CreateCode {
                     }
                 }
                 //显示行号
-                System.out.println("line " + line + ": " + tempString);
+                logger.info("line " + line + ": " + tempString);
                 line++;
             }
             reader.close();

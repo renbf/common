@@ -1,0 +1,12 @@
+
+create table my_test
+(
+  id int(11) not null auto_increment,
+  count_id int(11) not null comment '记录数总数',
+  name varchar(20) null COMMENT '名称',
+  admin_name varchar(20) null comment  '操作人名称',
+  add_time datetime not null comment '添加时间',
+  primary key (id),
+  index count_id_idex(count_id)
+)comment '测试表' engine = MyISAM
+                             collate = utf8_bin;

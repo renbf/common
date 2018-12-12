@@ -1,13 +1,20 @@
 package com.yl.utils;
 
+import java.io.Serializable;
+
 /**
  * @author rbf
  * @createdate 2018/12/4 17:39
  * @desriction
  */
-public class BeanMapper {
+public class BeanMapper implements Serializable{
 
-    private String javaType;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4007501082692838583L;
+	
+	private String javaType;
     private String javaName;
     private String javabz;
     private String columnName;

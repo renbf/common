@@ -1,12 +1,26 @@
 
-create table my_test
-(
-  id int(11) not null auto_increment,
-  count_id int(11) not null comment '记录数总数',
-  name varchar(20) null COMMENT '名称',
-  admin_name varchar(20) null comment  '操作人名称',
-  add_time datetime not null comment '添加时间',
-  primary key (id),
-  index count_id_idex(count_id)
-)comment '测试表' engine = MyISAM
-                             collate = utf8_bin;
+create table admin_user (
+  admin_id int(11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  admin_name varchar(50) NOT NULL COMMENT '用户名称',
+  password varchar(200) NOT NULL COMMENT '密码',
+  status tinyint(4) DEFAULT NULL COMMENT '状态',
+  role_id int(11) DEFAULT NULL COMMENT '角色id',
+  add_time datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (admin_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table permission (
+  permission_id int(11) NOT NULL AUTO_INCREMENT COMMENT '权限id',
+  permission_url varchar(100) NOT NULL COMMENT '权限url',
+  permission_deac varchar(200) NOT NULL COMMENT '权限描述',
+  PRIMARY KEY (permission_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table role (
+  role_id int(11) NOT NULL AUTO_INCREMENT COMMENT '角色id',
+  role_name varchar(50) NOT NULL COMMENT '角色名称',
+  type tinyint(4) DEFAULT NULL COMMENT '角色类型',
+  permission_id int(11) DEFAULT NULL COMMENT '权限id',
+  PRIMARY KEY (role_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+                             

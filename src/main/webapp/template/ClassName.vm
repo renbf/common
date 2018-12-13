@@ -1,20 +1,42 @@
 package com.yl.modle;
 
+import java.io.Serializable;
+#if($beanMapperList)
+#foreach($element in $beanMapperList)
+#if($element.javaType == 'Date')
 import java.util.Date;
+#end
+#end
+#end
 /**
  * @author rbf
  * @createdate ${now}
  * @desriction
  */
-public class ${className} {
+public class ${className} implements Serializable {
+	/**
+	*serialVersionUID
+	*/
+	private static final long serialVersionUID = -2340557932235738712L;
 #if($beanMapperList)
 #foreach($element in $beanMapperList)
 #if($element.javabz)
-/**
-*$element.javabz
-*/
+	/**
+	*$element.javabz
+	*/
 #end
-private $element.javaType $element.javaName;
+	private $element.javaType $element.javaName;
+#end
+#end
+
+#if($beanMapperList)
+#foreach($element in $beanMapperList)
+	public $element.javaType get${element.javaNameUpperCase}() {
+		return ${element.javaName};
+	}
+	public void set${element.javaNameUpperCase}(${element.javaType} ${element.javaName}) {
+		this.$element.javaName = $element.javaName;
+	}
 #end
 #end
 }

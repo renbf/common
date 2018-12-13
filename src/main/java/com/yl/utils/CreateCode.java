@@ -128,7 +128,7 @@ public class CreateCode {
                 writer.close();
             }
         }
-
+        logger.info("模板生成成功");
     }
 
     public static Map<String,List<BeanMapper>> readFileByLines(String fileName){
@@ -168,6 +168,7 @@ public class CreateCode {
 
                                 beanMapper.setColumnName(columnName);
                                 beanMapper.setJavaName(javaName);
+                                beanMapper.setJavaNameUpperCase(firstNameUpperCase(javaName));
                                 beanMapper.setJavaType(columnsJava[j]);
                                 beanMapper.setJdbcType(columnsJdbc[j]);
                             }

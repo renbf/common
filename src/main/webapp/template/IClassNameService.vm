@@ -8,5 +8,6 @@ import com.yl.modle.${className};
  * @desriction
  */
 public interface I${className}Service {
-public List<${className}> query${className}All();
+
+	public List<${className}> query${className}All();
 }

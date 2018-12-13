@@ -14,11 +14,11 @@ import java.util.List;
  */
 @Service
 public class ${className}ServiceImpl implements I${className}Service{
-@Autowired
-private ${className}Dao ${classNameField}Dao;
 
-public List<${className}> query${className}All(){
+	@Autowired
+	private ${className}Dao ${classNameField}Dao;
 
+	public List<${className}> query${className}All(){
         return ${classNameField}Dao.query${className}All();
-        }
+	}
 }

@@ -16,6 +16,7 @@ public class BeanMapper implements Serializable{
 	
 	private String javaType;
     private String javaName;
+    private String javaNameUpperCase;
     private String javabz;
     private String columnName;
     private String jdbcType;
@@ -59,4 +60,13 @@ public class BeanMapper implements Serializable{
     public void setJdbcType(String jdbcType) {
         this.jdbcType = jdbcType;
     }
+
+	public String getJavaNameUpperCase() {
+		return javaNameUpperCase;
+	}
+
+	public void setJavaNameUpperCase(String javaNameUpperCase) {
+		this.javaNameUpperCase = javaNameUpperCase;
+	}
+    
 }

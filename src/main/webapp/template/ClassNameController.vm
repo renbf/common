@@ -18,10 +18,12 @@ import java.util.Map;
  */
 @Controller
 public class ${className}Controller {
-@Autowired
-private I${className}Service ${classNameField}Service;
-@RequestMapping(value = "/get${className}List")
-public ModelAndView get${className}List(HttpServletRequest request) {
+
+	@Autowired
+	private I${className}Service ${classNameField}Service;
+	
+	@RequestMapping(value = "/get${className}List")
+	public ModelAndView get${className}List(HttpServletRequest request) {
         List<${className}> list = ${classNameField}Service.query${className}All();
         ModelAndView mv = new ModelAndView("${classNameField}");
         Map<String, Object> result = new HashMap<>();
@@ -29,5 +31,5 @@ public ModelAndView get${className}List(HttpServletRequest request) {
         result.put("name", "1fds");
         mv.addAllObjects(result);
         return mv;
-        }
+	}
 }

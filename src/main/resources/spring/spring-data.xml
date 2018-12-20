@@ -22,13 +22,6 @@
     </bean>
 
 
-
-    <!-- 1.1 关联jdbc.properties -->
-
-    <context:property-placeholder location="classpath:jdbc/jdbc.properties"/>
-
-
-
     <!-- 02.配置SessionFactory -->
 
     <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

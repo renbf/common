@@ -9,8 +9,10 @@
 
 	<!-- 1.1 关联jdbc.properties -->
 
-    <context:property-placeholder location="classpath:properties/jdbc.properties"/>
+    <context:property-placeholder location="classpath:properties/jdbc.properties,classpath:properties/rabbitmq.properties"/>
     <!--01. 包扫描器 -->
 
     <import resource="classpath:spring/spring-data.xml" />
+    <import resource="classpath:spring/spring-rabbitmq.xml" />
+    <context:annotation-config/>
 </beans>

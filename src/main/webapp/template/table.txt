@@ -1,6 +1,7 @@
 
 create table admin_user (
   admin_id int(11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  admin_user_name varchar(50) NOT NULL COMMENT '用户登录用户名',
   admin_name varchar(50) NOT NULL COMMENT '用户名称',
   password varchar(200) NOT NULL COMMENT '密码',
   status tinyint(4) DEFAULT NULL COMMENT '状态',

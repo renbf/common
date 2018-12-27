@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="GBK"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yl.dao.${className}Dao">
@@ -26,4 +26,35 @@ $element.columnName,
 	<select id="query${className}All" resultMap="${className}Map" >
 		select <include refid="${className}Columns"></include> from ${table_name}
 	</select>
+	<insert id="add${className}" parameterType="com.yl.modle.${className}">
+		insert into ${table_name} 
+		(
+#if($beanMapperList)
+#foreach($element in $beanMapperList)
+#if($velocityCount == $beanMapperList.size())
+$element.columnName
+#else
+#if($element.isPrimary)
+#else
+$element.columnName,
+#end
+#end
+#end
+#end
+		) values 
+		(
+#if($beanMapperList)
+#foreach($element in $beanMapperList)
+#if($velocityCount == $beanMapperList.size())
+#{$element.javaName}
+#else
+#if($element.isPrimary)
+#else
+#{$element.javaName},
+#end
+#end
+#end
+#end
+		)
+	</insert>
 </mapper>

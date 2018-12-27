@@ -164,7 +164,7 @@ public class CreateCode {
                             if(columnRead[1].indexOf(columns[j]) >= 0){
                                 String columnName = columnRead[0].toLowerCase();
                                 String javaName = columnNameToJavaName(columnName,false);
-
+                                beanMapper.setIsPrimary(false);
                                 beanMapper.setColumnName(columnName);
                                 beanMapper.setJavaName(javaName);
                                 beanMapper.setJavaNameUpperCase(firstNameUpperCase(javaName));
@@ -178,6 +178,16 @@ public class CreateCode {
                             list.add(beanMapper);
                         }
                     }
+                	//找到主键字段
+                	if(tempString.indexOf("primary key") >= 0) {
+                		String primaryKey = tempString.substring(11).trim();
+                		primaryKey = primaryKey.substring(1, primaryKey.length()-1).trim();
+                		for(BeanMapper beanMapper:list) {
+                			if(primaryKey.equals(beanMapper.getColumnName())) {
+                				beanMapper.setIsPrimary(true);
+                			}
+                		}
+                	}
                 	//读表结束
                 	if(tempString.indexOf(";") >= 0) {
                 		tablesMap.put(tableName, list);

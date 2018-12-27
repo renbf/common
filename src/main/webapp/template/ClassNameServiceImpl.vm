@@ -18,7 +18,13 @@ public class ${className}ServiceImpl implements I${className}Service{
 	@Autowired
 	private ${className}Dao ${classNameField}Dao;
 
+	@Override
 	public List<${className}> query${className}All(){
         return ${classNameField}Dao.query${className}All();
+	}
+	
+	@Override
+	public Integer add${className}(${className} ${classNameField}){
+        return ${classNameField}Dao.add${className}(${classNameField});
 	}
 }

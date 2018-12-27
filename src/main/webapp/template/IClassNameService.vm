@@ -10,4 +10,6 @@ import com.yl.modle.${className};
 public interface I${className}Service {
 
 	public List<${className}> query${className}All();
+	
+	public Integer add${className}(${className} ${classNameField});
 }

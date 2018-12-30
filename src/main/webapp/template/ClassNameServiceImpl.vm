@@ -1,9 +1,9 @@
-package com.yl.service.impl;
+package ${serviceImplPackage};
 
 
-import com.yl.dao.${className}Dao;
-import com.yl.modle.${className};
-import com.yl.service.I${className}Service;
+import ${daoPackage}.${className}Dao;
+import ${modlePackage}.${className};
+import ${servicePackage}.I${className}Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

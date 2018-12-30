@@ -1,4 +1,4 @@
-package com.yl.modle;
+package ${modlePackage};
 
 import java.io.Serializable;
 #if($beanMapperList)

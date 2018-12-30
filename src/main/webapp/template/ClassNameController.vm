@@ -1,4 +1,4 @@
-package com.yl.controller;
+package ${controllerPackage};
 
 import com.yl.modle.${className};
 import com.yl.service.I${className}Service;

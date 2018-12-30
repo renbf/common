@@ -1,6 +1,6 @@
 
-package com.yl.dao;
-import com.yl.modle.${className};
+package ${daoPackage};
+import ${modlePackage}.${className};
 import java.util.List;
 /**
  * @author rbf

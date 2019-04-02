@@ -21,6 +21,7 @@ public class TestJavaNio {
 
 	private static final Logger log = LoggerFactory.getLogger(TestJavaNio.class);
 	
+	
 	static void readNIO() {  
         String pathname = "F:\\gongju\\学习资料\\面试相关\\nio\\nio.txt";  
         FileInputStream fin = null;  
